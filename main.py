@@ -2,7 +2,7 @@ import os
 import re
 import ScreenCloud
 
-from http.client import HTTPSConnection
+from http.client import HTTPConnection
 from base64 import b64encode
 
 from PythonQt.QtCore import QSettings, QFile, QStandardPaths
@@ -25,7 +25,7 @@ def get_rnd_dict():
 class WebDAV(object):
 	def __init__(self, url, username=None, password=None):
 		# TODO: validate args
-		self.connection = HTTPSConnection(url)
+		self.connection = HTTPConnection(url)
 		self.connection.close()
 		self.headers = {}
 
